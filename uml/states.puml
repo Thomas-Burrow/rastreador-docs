@@ -1,0 +1,16 @@
+@startuml StateChartRast
+hide empty description
+[*] -> Aguardando
+Aguardando : lavagemCompleta : bool = False
+Aguardando : oficinaCompleta : bool = False
+Aguardando : testeCompleto : bool = False
+Aguardando --> Teste
+Teste -> Aguardando : testeCompleto := True
+Aguardando -> Oficina
+Oficina -> Aguardando : oficinaCompleta := True
+Aguardando ---> Lavagem
+Lavagem -> Aguardando : lavagemCompleta := True
+Aguardando ----> Completo : [testeCompleto && oficinaCompleta && lavagemCompleta]
+Completo -> Retirado
+Retirado -> [*]
+@enduml

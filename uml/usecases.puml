@@ -1,0 +1,29 @@
+@startuml UseCasesRast
+actor :Usuário: as user
+actor :Mecânico: as mechanic
+actor :RH: as rh
+actor :Gerente: as manager
+actor :Secretario: as desk
+manager -|> rh
+manager -|> mechanic
+manager -|> desk
+
+user -- (Fazer Login)
+
+package "Com Login" {
+    usecase "Visualizar dashboard de veiculos" as UC1
+    usecase "Alterar atribuições de outros usuarios" as UC2
+    usecase "Criar ordem de serviço" as UC3
+    usecase "Visualizar linha do tempo de veiculo" as UC4
+    usecase "Alterar Status do Veiculo" as UC5
+    usecase "Gerar QRCode" as UC6
+}
+
+desk -- UC1
+rh -- UC2
+desk -- UC3
+UC3 -- UC6
+desk -- UC4
+mechanic -- UC5
+
+@enduml

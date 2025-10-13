@@ -1,0 +1,55 @@
+# Compiled output files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.dvi
+*.log
+*.lof
+*.lot
+*.nav
+*.out
+*.pdf
+*.snm
+*.toc
+*.xdv
+
+# Temporary and auxiliary files
+*.acn
+*.acr
+*.alg
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.loa
+*.maf
+*.mtc*
+*.nlo
+*.nls
+*.run.xml
+*.synctex.gz
+*.tdo
+*.thm
+*.tmp
+*.vrb
+*.xdy
+
+# Editor-specific files (e.g., Vim, Emacs, VS Code)
+*~
+.#*
+*.swp
+.DS_Store
+.vscode/
+
+# Other common ignored files
+*.bak
+*.old
+
+#rendered pngs for plantuml
+*.png
