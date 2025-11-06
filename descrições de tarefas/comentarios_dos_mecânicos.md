@@ -1,0 +1,2 @@
+## Possibilitar a adição de comentarios para a ordem de serviço
+Caso ocorra um imprevisto, possibilitar comentários pelos mecânicos, que provavelmente devem aparecer na linha de tempo para evetuais consultas.

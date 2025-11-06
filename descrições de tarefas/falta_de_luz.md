@@ -1,0 +1,2 @@
+## Manter dados localmente no caso de falta de luz
+Isso me parece ser a tarefa mais dificil no momento, já que a lógica está toda implementada no servidor no momento e sincronizar n clientes mandando atualizações quando a luz voltar não aparenta ser trivial.

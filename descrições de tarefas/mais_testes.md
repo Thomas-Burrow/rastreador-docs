@@ -1,0 +1,3 @@
+## Criar testes para todas as paginas
+Criar uns usuários de teste e ordens de serviço de teste (provavelmente depois de recebermos novo schema sql)
+Testar o status da resposta deve ser suficiente para iniciar, conforme [https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml] devemos retornar 200 em sucesso, 401 se não tem login quando deveria ter (TODO: implementar isso) e 403 quando não tem permissão.
