@@ -1,16 +1,25 @@
 @startuml StateChartRast
 hide empty description
 [*] -> Aguardando
-Aguardando : lavagemCompleta : bool = False
-Aguardando : oficinaCompleta : bool = False
-Aguardando : testeCompleto : bool = False
-Aguardando --> Teste
-Teste -> Aguardando : testeCompleto := True
-Aguardando -> Oficina
-Oficina -> Aguardando : oficinaCompleta := True
-Aguardando ---> Lavagem
-Lavagem -> Aguardando : lavagemCompleta := True
-Aguardando ----> Completo : [testeCompleto && oficinaCompleta && lavagemCompleta]
+state "Programação" as prog
+Aguardando --> prog
+Aguardando -> Garantia
+Garantia -> [*]
+prog -> Oficina
+state "Aguardando Teste" as At
+state "Aguardando Lavagagem" as Al
+state Oficina {
+    state "Em etapa n" as sub
+    sub -> sub : checkinSubestado (etapa += 1)
+    sub --> At : [etapa >= n_etapas]
+
+}
+Oficina : etapa
+Oficina : n_etapas
+At --> Teste
+Teste -> Al
+Al ---> Lavagem
+Lavagem ----> Completo
 Completo -> Retirado
 Retirado -> [*]
 @enduml

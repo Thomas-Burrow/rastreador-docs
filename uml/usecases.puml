@@ -3,10 +3,13 @@ actor :Usuário: as user
 actor :Mecânico: as mechanic
 actor :RH: as rh
 actor :Gerente: as manager
-actor :Secretario: as desk
+actor :Consultor: as desk
+actor :Programador: as prog
 manager -|> rh
 manager -|> mechanic
 manager -|> desk
+manager -|> prog
+
 
 user -- (Fazer Login)
 
@@ -17,6 +20,8 @@ package "Com Login" {
     usecase "Visualizar linha do tempo de veiculo" as UC4
     usecase "Alterar Status do Veiculo" as UC5
     usecase "Gerar QRCode" as UC6
+    usecase "Criar sequencia de etapas" as UC7
+    usecase "Atribuir mecânicos para etapas" as UC8
 }
 
 desk -- UC1
@@ -25,5 +30,7 @@ desk -- UC3
 UC3 -- UC6
 desk -- UC4
 mechanic -- UC5
+prog -- UC7
+UC7 -- UC8 : <<includes>>
 
 @enduml
